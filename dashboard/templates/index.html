@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXUS | IoT Security</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="icon" type="image/jpeg"
+      href="{{ url_for('static', filename='images/nexus-icon.png') }}">      
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon"><img
+    src="{{ url_for('static', filename='images/nexus-icon.png') }}"
+    alt="NEXUS Logo"
+    class="brand-logo"
+></div>
+            <div>
+                <h2>NEXUS</h2>
+                <small>NETWORK INTELLIGENCE</small>
+            </div>
+        </div>
+
+        <div class="nav-label">WORKSPACE</div>
+
+        <nav class="navigation">
+            <a href="#overview" class="nav-item active">▦ Dashboard</a>
+            <a href="#analysis" class="nav-item">⌕ Traffic Analysis</a>
+            <a href="#performance" class="nav-item">◈ Model Performance</a>
+            <a href="#results" class="nav-item">▤ Detection Results</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <div>
+                    <strong>System Online</strong>
+                    <small>AI Engine Active</small>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                FEDERATED LEARNING-BASED PRIVACY-PRESERVING IOT INTRUSION DETECTION<br>
+                <span>Version 1.0.0</span>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">WORKSPACE / OVERVIEW</p>
+                <h2>Security Dashboard</h2>
+            </div>
+
+            <div class="topbar-right">
+                <span class="live-indicator">
+                    <span class="status-dot"></span>
+                    LIVE SYSTEM
+                </span>
+
+                <div class="profile">
+                    <div class="profile-avatar">AI</div>
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>Security Console</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="page-section">
+
+            <div class="welcome-section">
+                <div>
+                    <p class="eyebrow">INTELLIGENT THREAT MONITORING</p>
+                    <h1>Network Security <span>Overview</span></h1>
+                    <p class="section-description">
+                        Monitor network traffic and identify potential IoT security threats
+                        using federated learning models.
+                    </p>
+                </div>
+
+                <div class="security-badge">
+                    <span class="status-dot"></span>
+                    Protection Engine Ready
+                </div>
+            </div>
+
+
+            <!-- LIVE STATISTICS -->
+            <div class="section-heading">
+                <div>
+                    <h3>Live Detection Statistics</h3>
+                    <p>Results from the latest CSV analysis</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Records</span>
+                        <span class="stat-icon blue">▤</span>
+                    </div>
+                    <h2 id="totalRecords">0</h2>
+                    <small>Analyzed traffic records</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Normal Records</span>
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <h2 id="normalRecords">0</h2>
+                    <small>Benign traffic detected</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Attack Records</span>
+                        <span class="stat-icon red">⚠</span>
+                    </div>
+                    <h2 id="attackRecords">0</h2>
+                    <small>Potential threats detected</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Detection Models</span>
+                        <span class="stat-icon purple">◈</span>
+                    </div>
+                    <h2>03</h2>
+                    <small>Centralized and Federated</small>
+                </div>
+
+            </div>
+            <!-- TRAFFIC VISUALIZATION -->
+<div class="section-heading">
+    <div>
+        <h3>Network Traffic Visualization</h3>
+        <p>Visual analysis of detected network traffic</p>
+    </div>
+    <span class="data-tag">LIVE ANALYTICS</span>
+</div>
+
+<div class="charts-grid">
+
+    <div class="chart-card">
+        <h3>Normal vs Attack Distribution</h3>
+        <p>Traffic security classification</p>
+        <div class="chart-container">
+            <canvas id="trafficDistributionChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-card">
+        <h3>Predicted Traffic Classes</h3>
+        <p>Distribution of detected traffic categories</p>
+        <div class="chart-container">
+            <canvas id="classDistributionChart"></canvas>
+        </div>
+    </div>
+
+</div>
+
+
+            <!-- MODEL PERFORMANCE -->
+            <div id="performance" class="section-heading">
+                <div>
+                    <h3>Model Performance Overview</h3>
+                    <p>Evaluation results on the untouched test dataset</p>
+                </div>
+                <span class="data-tag">FINAL TEST RESULTS</span>
+            </div>
+
+            <div class="performance-grid">
+
+                <div class="performance-card">
+                    <span class="model-type">BASELINE MODEL</span>
+                    <h3>Centralized</h3>
+                    <div class="metric">
+                        <span>Accuracy</span>
+                        <strong>77.83%</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Macro F1</span>
+                        <strong>0.5160</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Weighted F1</span>
+                        <strong>0.7711</strong>
+                    </div>
+                </div>
+
+                <div class="performance-card">
+                    <span class="model-type">FEDERATED MODEL</span>
+                    <h3>IID FedAvg</h3>
+                    <div class="metric">
+                        <span>Accuracy</span>
+                        <strong>74.94%</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Macro F1</span>
+                        <strong>0.4568</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Weighted F1</span>
+                        <strong>0.7274</strong>
+                    </div>
+                </div>
+
+                <div class="performance-card">
+                    <span class="model-type">FEDERATED MODEL</span>
+                    <h3>Non-IID FedAvg</h3>
+                    <div class="metric">
+                        <span>Accuracy</span>
+                        <strong>61.44%</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Macro F1</span>
+                        <strong>0.3267</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Weighted F1</span>
+                        <strong>0.5315</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRAFFIC ANALYSIS -->
+        <section id="analysis" class="page-section">
+
+            <div class="section-heading">
+                <div>
+                    <h3>Traffic Analysis Center</h3>
+                    <p>Upload a network traffic dataset for AI-powered detection</p>
+                </div>
+                <span class="data-tag">AI ENGINE</span>
+            </div>
+
+            <div class="analysis-panel">
+
+                <div class="analysis-intro">
+                    <div class="analysis-icon">⌁</div>
+                    <div>
+                        <h3>Run Security Analysis</h3>
+                        <p>
+                            Select a trained model and upload your network
+                            traffic CSV file.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="model">SELECT DETECTION MODEL</label>
+
+                        <select id="model">
+                            <option value="Centralized">Centralized Model</option>
+                            <option value="IID FedAvg">IID FedAvg</option>
+                            <option value="Non-IID FedAvg">Non-IID FedAvg</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="file">UPLOAD NETWORK TRAFFIC CSV</label>
+
+                        <input type="file" id="file" accept=".csv">
+                    </div>
+
+                </div>
+
+                <div class="analysis-actions">
+                    <button id="analyzeBtn">
+                        Analyze Network Traffic →
+                    </button>
+
+                    <p id="message">
+                        Ready to analyze network traffic.
+                    </p>
+                </div>
+
+                <div class="upload-note">
+                    Supported format: CSV
+                    <span>Maximum 10,000 records per upload</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DETECTION RESULTS -->
+        <section id="results" class="page-section">
+
+            <div class="section-heading">
+                <div>
+                    <h3>Detection Intelligence</h3>
+                    <p>Detailed classification of analyzed network traffic</p>
+                </div>
+                <span class="data-tag">CLASSIFICATION LOG</span>
+            </div>
+
+            <div class="results-panel">
+
+                <div class="results-header">
+                    <div>
+                        <h3>Prediction Results</h3>
+                        <p>AI-generated traffic classification</p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>RECORD</th>
+                                <th>DETECTED CLASS</th>
+                                <th>SECURITY STATUS</th>
+                                <th>CONFIDENCE</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="resultsBody">
+                            <tr>
+                                <td colspan="4" class="empty-state">
+                                    No analysis performed yet.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="main-footer">
+            <span>SENTINEL AI — IoT INTRUSION DETECTION SYSTEM</span>
+            <span>FEDERATED LEARNING • PRIVACY-AWARE ARCHITECTURE</span>
+        </footer>
+
+    </main>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>

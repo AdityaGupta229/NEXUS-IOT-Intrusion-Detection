@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}About Project | NEXUS{% endblock %}
+{% block page_heading %}About Project{% endblock %}
+
+{% block content %}
+
+<div class="welcome-section">
+    <div>
+        <p class="eyebrow">PROJECT DOCUMENTATION</p>
+        <h1>About <span>NEXUS</span></h1>
+        <p class="section-description">
+            A Federated Learning-Based Privacy-Preserving
+            IoT Intrusion Detection System.
+        </p>
+    </div>
+    <div class="security-badge">
+        <span class="status-dot"></span>
+        Major Project
+    </div>
+</div>
+
+<div class="chart-card about-hero">
+    <p class="eyebrow">PROJECT OVERVIEW</p>
+    <h2>Intelligent IoT Network Security</h2>
+    <p>
+        NEXUS is a prototype intrusion detection platform that
+        explores centralized and federated learning approaches
+        for classifying IoT network traffic. It compares model
+        performance under IID and Non-IID client data distributions.
+    </p>
+</div>
+
+<div class="section-heading">
+    <div>
+        <h3>Project Objectives</h3>
+        <p>What this system aims to achieve</p>
+    </div>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <h3>Intrusion Detection</h3>
+        <p>Identify benign and potentially malicious IoT network traffic.</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Federated Learning</h3>
+        <p>Explore collaborative model training across simulated clients.</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Model Comparison</h3>
+        <p>Evaluate centralized, IID FedAvg and Non-IID FedAvg approaches.</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Visual Monitoring</h3>
+        <p>Present prediction summaries and model evaluation through a dashboard.</p>
+    </div>
+</div>
+
+<div class="section-heading">
+    <div>
+        <h3>System Workflow</h3>
+        <p>High-level processing pipeline</p>
+    </div>
+</div>
+
+<div class="chart-card workflow-card">
+
+    <div class="workflow-step">
+        <span>01</span>
+        <div>
+            <h3>Dataset Collection</h3>
+            <p>CICIoT2023 network traffic dataset is used for experimentation.</p>
+        </div>
+    </div>
+
+    <div class="workflow-step">
+        <span>02</span>
+        <div>
+            <h3>Data Preprocessing</h3>
+            <p>Feature selection, data cleaning, scaling and label encoding.</p>
+        </div>
+    </div>
+
+    <div class="workflow-step">
+        <span>03</span>
+        <div>
+            <h3>Model Training</h3>
+            <p>Centralized training and simulated federated training using FedAvg.</p>
+        </div>
+    </div>
+
+    <div class="workflow-step">
+        <span>04</span>
+        <div>
+            <h3>Model Evaluation</h3>
+            <p>Compare accuracy, macro F1-score and weighted F1-score.</p>
+        </div>
+    </div>
+
+    <div class="workflow-step">
+        <span>05</span>
+        <div>
+            <h3>Traffic Prediction</h3>
+            <p>Flask application processes uploaded CSV files and generates predictions.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="section-heading">
+    <div>
+        <h3>Technology Stack</h3>
+        <p>Tools and frameworks used in development</p>
+    </div>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <h3>Python</h3>
+        <p>Core programming language</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>PyTorch</h3>
+        <p>Neural network development and training</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Flask</h3>
+        <p>Backend API and web application</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>HTML, CSS & JS</h3>
+        <p>Interactive dashboard interface</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Pandas & NumPy</h3>
+        <p>Dataset processing and numerical operations</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Chart.js</h3>
+        <p>Interactive data visualizations</p>
+    </div>
+</div>
+
+<div class="guideline-note">
+    <strong>Research limitation:</strong>
+    Federated clients in this prototype are simulated on a single
+    machine. The implementation does not include secure aggregation
+    or differential privacy, so it should not be interpreted as
+    providing a formal privacy guarantee.
+</div>
+
+{% endblock %}

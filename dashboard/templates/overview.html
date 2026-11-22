@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Overview | NEXUS{% endblock %}
+{% block page_heading %}Security Overview{% endblock %}
+
+{% block content %}
+
+<div class="welcome-section">
+    <div>
+        <p class="eyebrow">INTELLIGENT THREAT MONITORING</p>
+
+        <h1>
+            Network Security <span>Overview</span>
+        </h1>
+
+        <p class="section-description">
+            Analyze IoT network traffic and identify potential
+            security threats using centralized and federated
+            learning models.
+        </p>
+    </div>
+
+    <div class="security-badge">
+        <span class="status-dot"></span>
+        Analysis Environment Ready
+    </div>
+</div>
+
+<!-- DETECTION STATISTICS -->
+
+<div class="section-heading">
+    <div>
+        <h3>Detection Statistics</h3>
+        <p>Summary of the latest traffic analysis</p>
+    </div>
+
+    <span class="data-tag">ANALYSIS SUMMARY</span>
+</div>
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span>Total Records</span>
+            <span class="stat-icon blue">▤</span>
+        </div>
+
+        <h2 id="totalRecords">0</h2>
+        <small>Analyzed traffic records</small>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span>Normal Records</span>
+            <span class="stat-icon green">✓</span>
+        </div>
+
+        <h2 id="normalRecords">0</h2>
+        <small>Benign traffic detected</small>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span>Attack Records</span>
+            <span class="stat-icon red">!</span>
+        </div>
+
+        <h2 id="attackRecords">0</h2>
+        <small>Potential threats detected</small>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span>Detection Models</span>
+            <span class="stat-icon purple">◇</span>
+        </div>
+
+        <h2>03</h2>
+        <small>One centralized, two federated</small>
+    </div>
+
+</div>
+
+<!-- PLATFORM INTRODUCTION -->
+
+<div class="section-heading">
+    <div>
+        <h3>Platform Capabilities</h3>
+        <p>Core modules of the NEXUS security platform</p>
+    </div>
+</div>
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <h3>Traffic Analysis</h3>
+        <p>Upload network traffic datasets and run trained detection models.</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Visual Analytics</h3>
+        <p>Explore traffic classifications and predicted attack categories.</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Model Evaluation</h3>
+        <p>Compare centralized and federated model performance.</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Detection Intelligence</h3>
+        <p>Review individual predictions and model confidence estimates.</p>
+    </div>
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/overview.js') }}"></script>
+{% endblock %}

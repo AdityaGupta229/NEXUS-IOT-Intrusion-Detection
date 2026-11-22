@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Visual Analytics | NEXUS{% endblock %}
+{% block page_heading %}Visual Analytics{% endblock %}
+
+{% block content %}
+
+<div class="welcome-section">
+    <div>
+        <p class="eyebrow">NETWORK INTELLIGENCE</p>
+        <h1>Visual <span>Analytics</span></h1>
+        <p class="section-description">
+            Explore traffic classification and attack category
+            distribution from your latest dataset analysis.
+        </p>
+    </div>
+    <div class="security-badge">
+        <span class="status-dot"></span>
+        Analytics Module
+    </div>
+</div>
+
+<div class="section-heading">
+    <div>
+        <h3>Traffic Intelligence</h3>
+        <p>Visual representation of analyzed network records</p>
+    </div>
+    <span class="data-tag">DATA VISUALIZATION</span>
+</div>
+
+<div class="charts-grid">
+
+    <div class="chart-card">
+        <h3>Traffic Distribution</h3>
+        <p>Normal traffic versus detected attacks</p>
+        <div class="chart-container">
+            <canvas id="trafficDistributionChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-card">
+        <h3>Attack Category Distribution</h3>
+        <p>Top detected attack categories</p>
+        <div class="chart-container">
+            <canvas id="classDistributionChart"></canvas>
+        </div>
+    </div>
+
+</div>
+
+<div class="guideline-note">
+    <strong>Analysis Note:</strong>
+    Charts will display information after a CSV dataset has
+    been successfully analyzed on the Traffic Analysis page.
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+{% endblock %}

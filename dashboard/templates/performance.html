@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Model Performance | NEXUS{% endblock %}
+{% block page_heading %}Model Performance{% endblock %}
+
+{% block content %}
+
+<div class="welcome-section">
+    <div>
+        <p class="eyebrow">FEDERATED LEARNING EVALUATION</p>
+        <h1>Model <span>Performance</span></h1>
+        <p class="section-description">
+            Compare centralized learning with IID and Non-IID
+            Federated Averaging models using final test results.
+        </p>
+    </div>
+    <div class="security-badge">
+        <span class="status-dot"></span>
+        Evaluation Completed
+    </div>
+</div>
+
+<div class="section-heading">
+    <div>
+        <h3>Final Test Metrics</h3>
+        <p>Performance evaluated on the held-out test dataset</p>
+    </div>
+    <span class="data-tag">MODEL COMPARISON</span>
+</div>
+
+<div class="performance-grid">
+
+    <div class="chart-card performance-card">
+        <span class="model-label">CENTRALIZED</span>
+        <h2>Centralized Model</h2>
+
+        <div class="performance-metric">
+            <span>Accuracy</span>
+            <strong>77.83%</strong>
+        </div>
+        <div class="performance-metric">
+            <span>Macro F1-Score</span>
+            <strong>0.5160</strong>
+        </div>
+        <div class="performance-metric">
+            <span>Weighted F1-Score</span>
+            <strong>0.7711</strong>
+        </div>
+    </div>
+
+    <div class="chart-card performance-card">
+        <span class="model-label">IID FEDERATED</span>
+        <h2>IID FedAvg</h2>
+
+        <div class="performance-metric">
+            <span>Accuracy</span>
+            <strong>74.94%</strong>
+        </div>
+        <div class="performance-metric">
+            <span>Macro F1-Score</span>
+            <strong>0.4568</strong>
+        </div>
+        <div class="performance-metric">
+            <span>Weighted F1-Score</span>
+            <strong>0.7274</strong>
+        </div>
+    </div>
+
+    <div class="chart-card performance-card">
+        <span class="model-label">NON-IID FEDERATED</span>
+        <h2>Non-IID FedAvg</h2>
+
+        <div class="performance-metric">
+            <span>Accuracy</span>
+            <strong>61.44%</strong>
+        </div>
+        <div class="performance-metric">
+            <span>Macro F1-Score</span>
+            <strong>0.3267</strong>
+        </div>
+        <div class="performance-metric">
+            <span>Weighted F1-Score</span>
+            <strong>0.5315</strong>
+        </div>
+    </div>
+
+</div>
+
+<div class="section-heading">
+    <div>
+        <h3>Comparative Analysis</h3>
+        <p>Visual comparison of the three trained models</p>
+    </div>
+</div>
+
+<div class="chart-card">
+    <h3>Accuracy Comparison</h3>
+    <p>Final test accuracy across all models</p>
+    <div class="chart-container">
+        <canvas id="accuracyChart"></canvas>
+    </div>
+</div>
+
+<div class="chart-card" style="margin-top: 22px;">
+    <h3>F1-Score Comparison</h3>
+    <p>Macro and weighted F1-score across all models</p>
+    <div class="chart-container">
+        <canvas id="f1Chart"></canvas>
+    </div>
+</div>
+
+<div class="guideline-note">
+    <strong>Interpretation:</strong>
+    These results show how the models performed on this particular
+    held-out test dataset. Performance may vary with different
+    network traffic distributions.
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/performance.js') }}"></script>
+{% endblock %}

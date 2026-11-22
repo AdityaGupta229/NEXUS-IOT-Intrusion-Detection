@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}NEXUS | Network Intelligence{% endblock %}</title>
+
+    <link rel="icon" type="image/png"
+          href="{{ url_for('static', filename='images/nexus-icon.png') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/pages.css') }}">
+
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <img src="{{ url_for('static', filename='images/nexus-icon.png') }}"
+                 alt="NEXUS Logo">
+
+            <div class="brand-info">
+                <h2>NEXUS</h2>
+                <span>NETWORK INTELLIGENCE</span>
+            </div>
+        </div>
+
+        <div class="nav-label">WORKSPACE</div>
+
+        <nav class="navigation">
+
+            <a href="{{ url_for('home') }}"
+               class="nav-item {% if active_page == 'overview' %}active{% endif %}">
+                <span class="nav-icon">⌂</span>
+                <span>Overview</span>
+            </a>
+
+            <a href="{{ url_for('analysis') }}"
+               class="nav-item {% if active_page == 'analysis' %}active{% endif %}">
+                <span class="nav-icon">⌁</span>
+                <span>Traffic Analysis</span>
+            </a>
+
+            <a href="{{ url_for('analytics') }}"
+               class="nav-item {% if active_page == 'analytics' %}active{% endif %}">
+                <span class="nav-icon">◫</span>
+                <span>Visual Analytics</span>
+            </a>
+
+            <a href="{{ url_for('performance') }}"
+               class="nav-item {% if active_page == 'performance' %}active{% endif %}">
+                <span class="nav-icon">◈</span>
+                <span>Model Performance</span>
+            </a>
+
+            <a href="{{ url_for('results') }}"
+               class="nav-item {% if active_page == 'results' %}active{% endif %}">
+                <span class="nav-icon">▤</span>
+                <span>Detection Results</span>
+            </a>
+
+            <div class="nav-label secondary-label">INFORMATION</div>
+
+            <a href="{{ url_for('about') }}"
+               class="nav-item {% if active_page == 'about' %}active{% endif %}">
+                <span class="nav-icon">ⓘ</span>
+                <span>About Project</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="footer-status">
+                <span class="status-dot"></span>
+                <span>LOCAL MODEL ENVIRONMENT</span>
+            </div>
+            <p>NEXUS Security Platform</p>
+            <small>Federated Learning Prototype</small>
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="main-area">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle"
+                        aria-label="Toggle navigation">☰</button>
+
+                <div>
+                    <div class="breadcrumb">NEXUS / WORKSPACE</div>
+                    <h1>{% block page_heading %}Overview{% endblock %}</h1>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="environment-tag">
+                    <span class="status-dot"></span>
+                    Local Environment
+                </div>
+            </div>
+
+        </header>
+
+        <section class="page-content">
+            {% block content %}{% endblock %}
+        </section>
+
+        <footer class="main-footer">
+            <span>NEXUS — Intelligent IoT Security</span>
+            <span>Federated Learning Research Project</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/navigation.js') }}"></script>
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

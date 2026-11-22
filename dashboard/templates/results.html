@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Detection Results | NEXUS{% endblock %}
+{% block page_heading %}Detection Results{% endblock %}
+
+{% block content %}
+
+<div class="welcome-section">
+    <div>
+        <p class="eyebrow">THREAT DETECTION REPORT</p>
+        <h1>Detection <span>Results</span></h1>
+        <p class="section-description">
+            Review individual network traffic predictions generated
+            by the selected machine learning model.
+        </p>
+    </div>
+    <div class="security-badge">
+        <span class="status-dot"></span>
+        Results Workspace
+    </div>
+</div>
+
+<div class="section-heading">
+    <div>
+        <h3>Prediction Records</h3>
+        <p>Latest successfully analyzed dataset</p>
+    </div>
+    <span class="data-tag">DETECTION REPORT</span>
+</div>
+
+<div class="chart-card results-card">
+
+    <div class="results-toolbar">
+        <div>
+            <h3>Classification Records</h3>
+            <p id="resultModel">No analysis performed yet</p>
+        </div>
+
+        <span id="resultCount" class="data-tag">
+            0 RECORDS
+        </span>
+    </div>
+
+    <div class="table-responsive">
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Record ID</th>
+                    <th>Predicted Class</th>
+                    <th>Status</th>
+                    <th>Confidence Estimate</th>
+                </tr>
+            </thead>
+
+            <tbody id="resultsBody">
+                <tr>
+                    <td colspan="4" class="empty-state">
+                        No detection results available.
+                        Analyze a CSV dataset first.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="guideline-note">
+    <strong>Note:</strong>
+    Model confidence is a prediction estimate and does not
+    guarantee that a classification is correct.
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+{% endblock %}

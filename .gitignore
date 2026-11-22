@@ -1,0 +1,30 @@
+﻿venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+! .env.example
+
+dataset/raw/
+dataset/processed/*.csv
+dataset/processed/clients/
+dataset/processed/noniid_clients/
+
+uploads/
+instance/
+.DS_Store
+Thumbs.db
+
+*_backup.*
+
+# Local backup archives
+NEXUS_UI_Backup_*/
+NEXUS_Old_Backups/
+
+
+# Old experimental model artifacts
+models/saved/*
+!models/saved/corrected_pipeline/
+!models/saved/corrected_pipeline/**
+
